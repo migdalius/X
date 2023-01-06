@@ -1,0 +1,15 @@
+hr {
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  border: none;
+  border-bottom: 1px solid #08284a;
+}
+
+.STEP__link-button {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+  width: 100%;
+}
