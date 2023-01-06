@@ -10,7 +10,7 @@ const DropDown = () => {
       </li>
       <li className="dropdownItem">
         <Cart color="#222" size={28} />
-        <Link>Moje zamówienia</Link>
+        <Link>Moje Zamówienia</Link>
       </li>
       <li className="dropdownItem">
         <QuestionCircle color="#222" size={28} />
