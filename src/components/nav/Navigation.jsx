@@ -2,6 +2,8 @@ import "../nav/navigation.css";
 
 import styled from "styled-components";
 import { Basket3, PersonCircle, Search } from "react-bootstrap-icons";
+import DropDown from "../dropdown/DropDown";
+import { useState } from "react";
 
 const MainContent = styled.div`
   display: flex;
@@ -34,6 +36,8 @@ const UserDetail = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
+  overflow: hidden;
 `;
 
 const CategoryContainer = styled.div`
@@ -59,6 +63,7 @@ const CategoryItemList = styled.li`
 `;
 
 const Navigation = () => {
+  const [open, setOpen] = useState(false);
   return (
     <>
       <MainContent>
@@ -73,14 +78,28 @@ const Navigation = () => {
         </SearchSection>
         <UserContainer>
           <div>
-            <Basket3 color="#fff" size={24} />
+            <Basket3 color="#fff" size={28} />
           </div>
-          <UserDetail>
-            <div>
-              <PersonCircle color="#fff" size={24} />
+          <div
+            className="menu-container"
+            onClick={() => {
+              setOpen(!open);
+            }}
+          >
+            <div className="menu-trigger">
+              <UserDetail>
+                <div>
+                  <PersonCircle color="#fff" size={28} />
+                </div>
+                <p>Moje konto</p>
+              </UserDetail>
             </div>
-            <p>Moje konto</p>
-          </UserDetail>
+            <div className={`dropdown-menu ${open ? "active" : "inactive"}`}>
+              <ul>
+                <DropDown />
+              </ul>
+            </div>
+          </div>
         </UserContainer>
       </MainContent>
       <CategoryContainer>
