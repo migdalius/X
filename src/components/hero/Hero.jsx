@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const MainContainer = styled.div`
-  width: 100%;
-  height: 90vh;
+  width: 1920px;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,16 +12,21 @@ const MainContainer = styled.div`
 const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-left: 5%;
-  margin-right: 5%;
 `;
 
 const BackgroundImage = styled.div`
-  width: 1920px;
-  height: 800px;
+  width: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 87vh;
   background-image: url("http://localhost:3000/img/bg-hero.png");
   border-radius: 0px 0px 20px 20px;
   position: relative;
+
+  @media (max-width: 1740px) {
+    width: 90vw;
+    height: 80vh;
+  }
 `;
 
 const TitleContainer = styled.h1`
@@ -47,6 +52,7 @@ const CardContainer = styled.div`
   margin: 30px;
   border-radius: 10px;
   margin-top: 120px;
+  gap: 10px;
 `;
 
 const DescContainer = styled.div`
@@ -90,19 +96,19 @@ const SingleCardImage = styled.img`
 `;
 
 const ArrowImage = styled.img`
-  height: 400px;
+  height: 300px;
   position: absolute;
   left: 500px;
-  top: 150px;
+  top: 190px;
 `;
 
 const SecondBaner = styled.div`
   width: 1300px;
-  height: 400px;
+  height: 300px;
   background-color: #fff;
   border-radius: 10px;
   position: relative;
-  bottom: 130px;
+  bottom: 80px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border: 1px solid #ddd;
   display: flex;
@@ -146,8 +152,10 @@ const Hero = () => {
             </DescContainer>
             <CardContainer>
               <SingleCard>
-                <SingleCardImage src="../img/cat/ziola.png" />
-                <SingleCardTitle>Zioła</SingleCardTitle>
+                <Link to={"/krok-1"}>
+                  <SingleCardImage src="../img/cat/ziola.png" />
+                  <SingleCardTitle>Zioła</SingleCardTitle>
+                </Link>
               </SingleCard>
               <SingleCard>
                 <SingleCardImage src="../img/cat/kwiaty.png" />

@@ -32,6 +32,17 @@ input {
   margin: 10px;
 }
 
+@media (max-width: 610px) {
+  .account {
+    display: none;
+  }
+}
+
+@media (max-width: 690px) {
+  .loop {
+    display: none;
+  }
+}
 /* dropdown */
 
 li img {
@@ -49,7 +60,8 @@ a {
 .dropdown-menu {
   position: absolute;
   top: 80px;
-  right: 750px;
+
+  right: 450px;
   background-color: #fff;
   border-radius: 8px;
   padding: 10px 20px;
@@ -116,7 +128,7 @@ a {
 .dropdown-shopping-cart {
   position: absolute;
   top: 80px;
-  right: 910px;
+  right: 605px;
   background-color: #fff;
   border-radius: 8px;
   padding: 10px 20px;

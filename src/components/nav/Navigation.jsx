@@ -25,6 +25,29 @@ const SearchSection = styled.div`
   justify-content: space-between;
   background-color: #fff;
   border-radius: 5px;
+
+  @media (max-width: 985px) {
+    width: 550px;
+  }
+
+  @media (max-width: 890px) {
+    width: 450px;
+  }
+
+  @media (max-width: 790px) {
+    width: 350px;
+  }
+  @media (max-width: 690px) {
+    width: 280px;
+  }
+
+  @media (max-width: 525px) {
+    width: 240px;
+  }
+
+  @media (max-width: 480px) {
+    width: 220px;
+  }
 `;
 
 const UserContainer = styled.div`
@@ -44,7 +67,8 @@ const UserDetail = styled.div`
 const CategoryContainer = styled.div`
   display: flex;
   justify-content: center;
-  height: 40px;
+
+  height: 45px;
   width: 100%;
   border-bottom: 1px solid #ddd;
   background-color: #f3f4f6;
@@ -55,6 +79,26 @@ const CategoryList = styled.ul`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
+  @media (max-width: 1030px) {
+    width: 50%;
+  }
+  @media (max-width: 880px) {
+    width: 60%;
+  }
+  @media (max-width: 710px) {
+    width: 70%;
+  }
+  @media (max-width: 580px) {
+    width: 80%;
+  }
+  @media (max-width: 505px) {
+    width: 95%;
+  }
+
+  @media (max-width: 425px) {
+    width: 100%;
+  }
 `;
 
 const CategoryItemList = styled.li`
@@ -79,7 +123,7 @@ const Navigation = () => {
             onChange={(e) => setQuery(e.target.value)}
             className="Nav__searchBar"
           />
-          <Search color="#0d9488" size={20} className="Nav__searchIcon" />
+          <Search color="#0d9488" className="Nav__searchIcon loop" />
         </SearchSection>
         <UserContainer>
           <div
@@ -115,7 +159,7 @@ const Navigation = () => {
                 <div>
                   <PersonCircle color="#fff" size={35} />
                 </div>
-                <p>Moje konto</p>
+                <p class="account">Moje konto</p>
               </UserDetail>
             </div>
             <div className={`dropdown-menu ${open ? "active" : "inactive"}`}>
