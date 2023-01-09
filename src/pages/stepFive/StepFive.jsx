@@ -1,149 +1,87 @@
 import Navigation from "../../components/nav/Navigation";
 import { Link } from "react-router-dom";
-import TopBar from "../../components/steps/TopBar";
-import styled, { keyframes } from "styled-components";
-import NextButton from "../../components/buttons/NextButton";
+import { useSelector } from "react-redux";
 
-const MainContainer = styled.section`
+import styled, { keyframes } from "styled-components";
+import TopNav from "../../components/topNav/TopNav";
+import SingleProductCart from "../../components/singleproductcart/SingleProductCart";
+import Footer from "../../components/footer/Footer";
+import FilterSideBar from "../../components/filtersidebar/FilterSideBar";
+import MainCategory from "../../components/maincategory/MainCategory";
+import Pagination from "../../components/pagination/Pagination";
+import NextStep from "../../components/buttons/NextStep";
+
+const MainContainer = styled.div`
   display: flex;
   justify-content: center;
-  padding-top: 40px;
+  width: 1920px;
+  height: auto;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 50px;
+  gap: 10px;
+  padding-bottom: 60px;
 `;
 
-const Container = styled.div`
-  width: 650px;
-  height: 820px;
-  background-color: #f9fafb;
-  border-radius: 10px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-`;
-
-const FiveContainer = styled.div`
-  height: 500px;
-  display: flex;
-
-  flex-direction: column;
-  align-items: center;
-`;
-
-const ProblemContainer = styled.div`
-  display: flex;
-  gap: 30px;
-`;
-
-const ProblemButton = styled.button`
-  width: 150px;
-  height: 60px;
-  border: 1px solid #ddd;
+const LeftContainer = styled.div`
+  width: 15%;
+  height: 650px;
   background-color: #fff;
-  border-radius: 5px;
-  cursor: pointer;
 `;
 
-const GridContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+const CenterContainer = styled.div`
+  width: 45%;
+  height: auto;
+  background-color: #fff;
+  position: relative;
 `;
 
-const SecondTitle = styled.p`
-  font-weight: 500;
-  font-size: 18px;
+const BackgroundContainer = styled.div`
+  width: 100vw;
+  height: auto;
+  background-color: #eceff1;
 `;
+
+const Hr = styled.hr`
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  padding: 0;
+  margin-bottom: 30px;
+`;
+
 const StepFive = () => {
   return (
     <div className="app">
-      <Navigation />
-      <MainContainer>
-        <Container>
-          <TopBar step={"5"} />
-          <FiveContainer>
-            <SecondTitle>
-              Czy "name" jest po "sterylizacji / kastracji"
-            </SecondTitle>
-            <ProblemContainer>
-              <ProblemButton>Nie ma problemów</ProblemButton>
-              <ProblemButton>Cierpi na</ProblemButton>
-            </ProblemContainer>
-
-            <GridContainer>
-              <div className="STEP__five-grid-1">
-                <div>
-                  <input type="radio" id="dewey" name="drone" value="dewey" />
-                  <label for="dewey">Zapalenie trzustki</label>
-                </div>
-                <div>
-                  <input type="radio" id="dewey" name="drone" value="dewey" />
-                  <label for="dewey">Cukrzyca</label>
-                </div>
-                <div>
-                  <input type="radio" id="dewey" name="drone" value="dewey" />
-                  <label for="dewey">Skóra i sierść</label>
-                </div>
-                <div>
-                  <input type="radio" id="dewey" name="drone" value="dewey" />
-                  <label for="dewey">Wątroba</label>
-                </div>
-                <div>
-                  <input type="radio" id="dewey" name="drone" value="dewey" />
-                  <label for="dewey">Stawy</label>
-                </div>
-                <div>
-                  <input type="radio" id="dewey" name="drone" value="dewey" />
-                  <label for="dewey">Nowotwory</label>
-                </div>
-                <div>
-                  <input type="radio" id="dewey" name="drone" value="dewey" />
-                  <label for="dewey">Wrażliwy żółądek</label>
-                </div>
-                <div>
-                  <input type="radio" id="dewey" name="drone" value="dewey" />
-                  <label for="dewey">Serce</label>
-                </div>
-              </div>
-              <div className="STEP__five-grid-1">
-                <div>
-                  <input type="radio" id="dewey" name="drone" value="dewey" />
-                  <label for="dewey">Padaczka</label>
-                </div>
-                <div>
-                  <input type="radio" id="dewey" name="drone" value="dewey" />
-                  <label for="dewey">Nieswoiste zapalenie jelit</label>
-                </div>
-                <div>
-                  <input type="radio" id="dewey" name="drone" value="dewey" />
-                  <label for="dewey">Nerki</label>
-                </div>
-                <div>
-                  <input type="radio" id="dewey" name="drone" value="dewey" />
-                  <label for="dewey">Kamienie nerkowe</label>
-                </div>
-                <div>
-                  <input type="radio" id="dewey" name="drone" value="dewey" />
-                  <label for="dewey">Nietolerancja pokarmowa</label>
-                </div>
-                <div>
-                  <input type="radio" id="dewey" name="drone" value="dewey" />
-                  <label for="dewey">Rekonwalescencja</label>
-                </div>
-                <div>
-                  <input type="radio" id="dewey" name="drone" value="dewey" />
-                  <label for="dewey">Zabuzenie wchłaniania</label>
-                </div>
-                <div>
-                  <input type="radio" id="dewey" name="drone" value="dewey" />
-                  <label for="dewey">Niperlipidemia</label>
-                </div>
-              </div>
-            </GridContainer>
-          </FiveContainer>
-          <div className="STEP__first-container STEP_conteiner-four">
-            <Link to="/krok-5" className="STEP__link-button">
-              <NextButton />
-            </Link>
-          </div>
-        </Container>
-      </MainContainer>
+      <BackgroundContainer>
+        <Navigation />
+        <MainContainer>
+          <LeftContainer>
+            <FilterSideBar />
+          </LeftContainer>
+          <CenterContainer>
+            <NextStep />
+            <TopNav />
+            <Hr />
+            <MainCategory />
+            <Hr />
+            <SingleProductCart />
+            <SingleProductCart />
+            <SingleProductCart />
+            <SingleProductCart />
+            <SingleProductCart />
+            <SingleProductCart />
+            <SingleProductCart />
+            <SingleProductCart />
+            <SingleProductCart />
+            <SingleProductCart />
+            <Hr />
+            <Pagination />
+          </CenterContainer>
+        </MainContainer>
+      </BackgroundContainer>
+      <Footer />
     </div>
   );
 };

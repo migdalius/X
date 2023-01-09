@@ -4,6 +4,12 @@ import { useSelector } from "react-redux";
 
 import styled, { keyframes } from "styled-components";
 import TopNav from "../../components/topNav/TopNav";
+import SingleProductCart from "../../components/singleproductcart/SingleProductCart";
+import Footer from "../../components/footer/Footer";
+import FilterSideBar from "../../components/filtersidebar/FilterSideBar";
+import MainCategory from "../../components/maincategory/MainCategory";
+import Pagination from "../../components/pagination/Pagination";
+import NextStep from "../../components/buttons/NextStep";
 
 const MainContainer = styled.div`
   display: flex;
@@ -14,79 +20,68 @@ const MainContainer = styled.div`
   margin-right: 5%;
   margin-top: 50px;
   gap: 10px;
+  padding-bottom: 60px;
 `;
 
 const LeftContainer = styled.div`
   width: 15%;
-  height: 500px;
+  height: 650px;
   background-color: #fff;
 `;
 
 const CenterContainer = styled.div`
-  width: 60%;
-  height: 500px;
+  width: 45%;
+  height: auto;
   background-color: #fff;
+  position: relative;
 `;
 
 const BackgroundContainer = styled.div`
-  background-color: #eceff1;
   width: 100vw;
-  height: 100vh;
+  height: auto;
+  background-color: #eceff1;
 `;
 
-const ProductContainer = styled.div`
-  display: flex;
-  width: 80%;
-  height: 200px;
-  background-color: #fff;
-  border-radius: 10px;
-  margin: 10px;
-
-  &:hover {
-    background-color: #eeeeee;
-  }
+const Hr = styled.hr`
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  padding: 0;
+  margin-bottom: 30px;
 `;
 
-const ImageContainer = styled.div`
-  width: 25%;
-`;
-
-const DescContainer = styled.div`
-  width: 50%;
-`;
-
-const BuyContainer = styled.div`
-  width: 25%;
-`;
-
-const ThumbNail = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: scale-down;
-  padding-top: 5px;
-  padding-bottom: 5px;
-`;
 const StepTwo = () => {
-  const name = useSelector((state) => state.user.name);
   return (
     <div className="app">
       <BackgroundContainer>
         <Navigation />
         <MainContainer>
-          <LeftContainer></LeftContainer>
+          <LeftContainer>
+            <FilterSideBar />
+          </LeftContainer>
           <CenterContainer>
+            <NextStep />
             <TopNav />
-            <div> fota kategori i opis kategorii</div>
-            <ProductContainer>
-              <ImageContainer>
-                <ThumbNail src="../img/testproduct/bazylia_cytrynowa.jpg" />
-              </ImageContainer>
-              <DescContainer>tytuł,waga,cena</DescContainer>
-              <BuyContainer>logo,desc,dodaj do koszyka,+-</BuyContainer>
-            </ProductContainer>
+            <Hr />
+            <MainCategory />
+            <Hr />
+            <SingleProductCart />
+            <SingleProductCart />
+            <SingleProductCart />
+            <SingleProductCart />
+            <SingleProductCart />
+            <SingleProductCart />
+            <SingleProductCart />
+            <SingleProductCart />
+            <SingleProductCart />
+            <SingleProductCart />
+            <Hr />
+            <Pagination />
           </CenterContainer>
         </MainContainer>
       </BackgroundContainer>
+      <Footer />
     </div>
   );
 };

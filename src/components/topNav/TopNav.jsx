@@ -9,9 +9,8 @@ const TopContainer = styled.div`
   height: 120px;
   background-color: #fff;
   border-radius: 10px;
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
 `;
-
 const CategoryContainer = styled.div`
   width: 100px;
   display: flex;
@@ -44,14 +43,15 @@ const TopNav = () => {
       </CategoryContainer>
       <Dots src="../img/step/dots.png" />
       <CategoryContainer>
-        <TopImage src="../img/step/podloze.png" />
-        <TopTitle>Podłoże</TopTitle>
-      </CategoryContainer>
-      <Dots src="../img/step/dots.png" />
-      <CategoryContainer>
         <TopImage src="../img/step/doniczka.png" />
         <TopTitle>Doniczki/Osłonki</TopTitle>
       </CategoryContainer>
+      <Dots src="../img/step/dots.png" />
+      <CategoryContainer>
+        <TopImage src="../img/step/podloze.png" />
+        <TopTitle>Podłoże</TopTitle>
+      </CategoryContainer>
+
       <Dots src="../img/step/dots.png" />
       <CategoryContainer>
         <TopImage src="../img/step/drenaz.png" />

@@ -1,186 +1,87 @@
 import Navigation from "../../components/nav/Navigation";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import styled, { keyframes } from "styled-components";
-import TopBar from "../../components/steps/TopBar";
-import NextButton from "../../components/buttons/NextButton";
+import TopNav from "../../components/topNav/TopNav";
+import SingleProductCart from "../../components/singleproductcart/SingleProductCart";
+import Footer from "../../components/footer/Footer";
+import FilterSideBar from "../../components/filtersidebar/FilterSideBar";
+import MainCategory from "../../components/maincategory/MainCategory";
+import Pagination from "../../components/pagination/Pagination";
+import NextStep from "../../components/buttons/NextStep";
 
-const MainContainer = styled.section`
+const MainContainer = styled.div`
   display: flex;
   justify-content: center;
-  padding-top: 40px;
+  width: 1920px;
+  height: auto;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 50px;
+  gap: 10px;
+  padding-bottom: 60px;
 `;
 
-const Container = styled.div`
-  width: 650px;
-  height: 820px;
-  background-color: #f9fafb;
-  border-radius: 10px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-`;
-
-const SecondContainer = styled.div`
-  height: 250px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`;
-
-const ThirdContainer = styled.div`
-  height: 170px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  margin-top: 70px;
-  margin-top: 60px;
-  margin-bottom: 40px;
-`;
-
-const FourthContainer = styled.div`
-  height: 170px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-`;
-
-const SecondTitle = styled.p`
-  font-weight: 500;
-  font-size: 18px;
-`;
-
-const TwoIconsContainer = styled.div`
-  display: flex;
-  padding-top: 10px;
-  gap: 50px;
-`;
-
-const IconsImg = styled.img`
-  width: 50px;
-  height: 50px;
-`;
-
-const ButtonImageContainer = styled.button`
-  width: 120px;
-  height: 90px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+const LeftContainer = styled.div`
+  width: 15%;
+  height: 650px;
   background-color: #fff;
-  cursor: pointer;
-
-  &:active {
-    border: 3px solid #08284a;
-  }
 `;
 
-const Line = styled.hr`
-  margin-left: 10%;
-  margin-right: 10%;
-  width: 80%;
-  border: none;
-  border-bottom: 1px solid #08284a;
+const CenterContainer = styled.div`
+  width: 45%;
+  height: auto;
+  background-color: #fff;
+  position: relative;
+`;
+
+const BackgroundContainer = styled.div`
+  width: 100vw;
+  height: auto;
+  background-color: #eceff1;
+`;
+
+const Hr = styled.hr`
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  padding: 0;
+  margin-bottom: 30px;
 `;
 
 const StepFour = () => {
   return (
     <div className="app">
-      <Navigation />
-      <MainContainer>
-        <Container>
-          <TopBar step={"4"} />
-
-          <SecondContainer>
-            <SecondTitle>
-              Czy "name" ma alegrię lub nietolerancje pokarmową.
-            </SecondTitle>
-            <TwoIconsContainer>
-              <ButtonImageContainer>
-                <p>Nie ma alergii</p>
-              </ButtonImageContainer>
-              <ButtonImageContainer>
-                <p>Ma alergię na</p>
-              </ButtonImageContainer>
-            </TwoIconsContainer>
-            {/* <div className="STEP_topBar-desc mr-bottom">
-              Zaznacz jednen lub więcej
-            </div> */}
-            {/* <TwoIconsContainer>
-              <label for="test1">
-                <input
-                  type="radio"
-                  name=""
-                  value=""
-                  className="STEP-input-list"
-                />{" "}
-                Jagnięcina
-              </label>
-              <label for="test1">
-                <input
-                  type="radio"
-                  name=""
-                  value=""
-                  className="STEP-input-list"
-                />{" "}
-                Indyk
-              </label>
-            </TwoIconsContainer> */}
-            {/* <TwoIconsContainer>
-              <label for="test1">
-                <input
-                  type="radio"
-                  name=""
-                  value=""
-                  className="STEP-input-list"
-                />{" "}
-                Kurczak
-              </label>
-              <label for="test1">
-                <input
-                  type="radio"
-                  name=""
-                  value=""
-                  className="STEP-input-list"
-                />{" "}
-                Wołowina
-              </label>
-            </TwoIconsContainer> */}
-          </SecondContainer>
-
-          <Line />
-          <ThirdContainer>
-            <SecondTitle>Jaką karmę lubi "name"?</SecondTitle>
-            <TwoIconsContainer>
-              <ButtonImageContainer>
-                <IconsImg src="../img/icons/karma_1.png" />
-                <p>Sucha</p>
-              </ButtonImageContainer>
-              <ButtonImageContainer>
-                <IconsImg src="../img/icons/karma_2.png" />
-                <p>Mokra</p>
-              </ButtonImageContainer>
-            </TwoIconsContainer>
-            <TwoIconsContainer>
-              <ButtonImageContainer>
-                <IconsImg src="../img/icons/karma_3.png" />
-                <p>Gotowana żywność</p>
-              </ButtonImageContainer>
-              <ButtonImageContainer>
-                <IconsImg src="../img/icons/karma_4.png" />
-                <p>BARF</p>
-              </ButtonImageContainer>
-            </TwoIconsContainer>
-          </ThirdContainer>
-          <FourthContainer>
-            <Link to="/krok-5" className="STEP__link-button">
-              <NextButton />
-            </Link>
-          </FourthContainer>
-        </Container>
-      </MainContainer>
+      <BackgroundContainer>
+        <Navigation />
+        <MainContainer>
+          <LeftContainer>
+            <FilterSideBar />
+          </LeftContainer>
+          <CenterContainer>
+            <NextStep />
+            <TopNav />
+            <Hr />
+            <MainCategory />
+            <Hr />
+            <SingleProductCart />
+            <SingleProductCart />
+            <SingleProductCart />
+            <SingleProductCart />
+            <SingleProductCart />
+            <SingleProductCart />
+            <SingleProductCart />
+            <SingleProductCart />
+            <SingleProductCart />
+            <SingleProductCart />
+            <Hr />
+            <Pagination />
+          </CenterContainer>
+        </MainContainer>
+      </BackgroundContainer>
+      <Footer />
     </div>
   );
 };

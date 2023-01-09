@@ -51,7 +51,7 @@ const Hr = styled.hr`
   margin-bottom: 30px;
 `;
 
-const StepThree = () => {
+const StepSixth = () => {
   return (
     <div className="app">
       <BackgroundContainer>
@@ -86,4 +86,4 @@ const StepThree = () => {
   );
 };
 
-export default StepThree;
+export default StepSixth;

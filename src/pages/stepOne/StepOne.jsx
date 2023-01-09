@@ -90,7 +90,7 @@ const StepOne = () => {
     <div className="app">
       <Navigation />
       <BodyContainer>
-        <TopNav />
+        <TopNav border={"1px solid #ddd"} />
         <MainContainer>
           <FlexContaner>
             <MainTitle>Gdzie będziesz uprawiał?</MainTitle>
