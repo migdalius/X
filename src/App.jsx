@@ -8,8 +8,9 @@ import StepThree from "./pages/stepThree/StepThree";
 import StepFour from "./pages/stepFour/StepFour";
 import StepFive from "./pages/stepFive/StepFive";
 import StepOne from "./pages/stepOne/StepOne";
-import List from "./pages/list/List";
+
 import SingleProduct from "./pages/singleProduct/SingleProduct";
+import HomeAdmin from "./pages/admin/home/HomeAdmin";
 function App() {
   return (
     <BrowserRouter>
@@ -20,8 +21,33 @@ function App() {
         <Route path="/krok-3" element={<StepThree />} />
         <Route path="/krok-4" element={<StepFour />} />
         <Route path="/krok-5" element={<StepFive />} />
-        <Route path="/lista-produktow" element={<List />} />
+        <Route path="/krok-6" element={<StepFive />} />
         <Route path="/lista-produktow/:id" element={<SingleProduct />} />
+        <Route path="/admin/dashboard" element={<HomeAdmin />} />
+        <Route path="/admin/adres-dostawy" element={<HomeAdmin />} />
+
+        {/* 
+          
+          -admin-
+            my account (kokpit )+
+            moje zamówienia
+            Adress Delivery
+          
+          -login-
+          login form
+          register form
+
+          -just page-
+          All product (view)
+          error 404
+          contact form
+
+          -order-
+          shopinng cart 
+          empty shopping cart
+          Deliver (page with form for delivery)
+          Payment (page with payment methods)
+        */}
       </Routes>
     </BrowserRouter>
   );

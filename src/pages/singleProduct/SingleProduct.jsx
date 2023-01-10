@@ -4,7 +4,7 @@ import Navigation from "../../components/nav/Navigation";
 import { ExclamationCircle } from "react-bootstrap-icons";
 
 const MainContainer = styled.div`
-  background-image: url("http://localhost:3000/img/bg.jpg");
+  background-color: #eceff1;
   width: 100vw;
   height: auto;
   display: flex;
@@ -34,6 +34,7 @@ const Products = styled.div`
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border: 1px solid #ddd;
   margin-bottom: 20px;
+  padding: 20px;
 `;
 
 const ImageContainer = styled.div`
@@ -51,6 +52,8 @@ const ImageTitle = styled.h2`
 const ImageSlider = styled.img`
   width: 500px;
   height: 500px;
+  object-fit: scale-down;
+  margin: 10px;
 `;
 
 const ImageSliderContainer = styled.div`
@@ -63,6 +66,8 @@ const SingleImageSlider = styled.img`
   height: 120px;
   border: 1px solid #ddd;
   border-radius: 5px;
+  object-fit: scale-down;
+  padding: 5px;
   cursor: pointer;
 `;
 
@@ -93,6 +98,7 @@ const ProducerLogo = styled.img`
   height: 75px;
   border: 1px solid #ddd;
   border-radius: 5px;
+  object-fit: scale-down;
 `;
 
 const PriceContainer = styled.div`
@@ -153,7 +159,7 @@ const QuantityInput = styled.input`
 `;
 
 const SummaryButton = styled.button`
-  background-color: #08284a;
+  background-color: #14b8a6;
   margin-left: 5%;
   margin-right: 5%;
   width: 90%;
@@ -161,6 +167,12 @@ const SummaryButton = styled.button`
   border-radius: 5px;
   color: #fff;
   cursor: pointer;
+  border: none;
+  &:hover {
+    background-color: #222;
+    transition: 0.3s;
+    color: #fff;
+  }
 `;
 
 const Desc = styled.p`
@@ -179,68 +191,57 @@ const SingleProduct = () => {
         <Content>
           <Products>
             <ImageContainer>
-              <ImageTitle>Mokra karma dla psa Rafi Classic 500 g</ImageTitle>
-              <ImageSlider src="../img/products/product.jpg" />
+              <ImageTitle>BAZYLIA POSPOLITA właściwa</ImageTitle>
+              <ImageSlider src="../img/testproduct/bazylia_cytrynowa.jpg" />
             </ImageContainer>
             <ImageSliderContainer>
-              <SingleImageSlider src="../img/products/miniatura.jpg" />
-              <SingleImageSlider src="../img/products/miniatura.jpg" />
-              <SingleImageSlider src="../img/products/miniatura.jpg" />
-              <SingleImageSlider src="../img/products/miniatura.jpg" />
+              <SingleImageSlider src="../img/testproduct/bazylia_cytrynowa.jpg" />
+              <SingleImageSlider src="../img/testproduct/bazylia_cytrynowa.jpg" />
+              <SingleImageSlider src="../img/testproduct/bazylia_cytrynowa.jpg" />
+              <SingleImageSlider src="../img/testproduct/bazylia_cytrynowa.jpg" />
             </ImageSliderContainer>
             <Line />
             <ImageContainer>
               <ImageTitle>Opis Produktu</ImageTitle>
               <Desc>
-                Karma odpowiednia dla każdej rasy m.in. Airedale terrier, Akita
-                amerykańska, Akita Inu,Alaskan malamute, Alpejski gończy
-                krótkonożny, American staffordshire terrier, Basset, Beagle,
-                Bearded collie, Bernardyn, Berneński pies pasterski, Owczarek
-                szwajcarski, Bloodhound, Bokser, Bolończyk, Border collie,
-                Border terrier, Boston terrier, Buhund norweski, Buldog,
-                Bulterier, Cane corso, Chart polski, Chihuahua, Chin japoński,
-                Chow chow, Cocker spaniel amerykański, Dalmatyńczyk, Doberman
-                ,Dog argentyński, Szwajcarski pies pasterski, Foksterier,
-                Foxhound amerykański ,Golden retriever, Gończy austriacki, Grand
-                basset, Husky, Irlandzki spaniel dowodny, Jack russel terrier,
-                Jamnik, Labrador retriever, Łajka zachodniosyberyjska, Mastif,
-                Mops, Niemiecki terier myśliwski, Ogar polski, Owczarek,
-                Rottweiler, Samoyed (samojed), Seter, Shiba inu, Spaniel,
-                Sznaucer, Terier, Wyżeł, Yorkshire terrier
+                Roślina jednoroczna o aromatycznych dekoracyjnych liściach.
+                Polecana do sałatek, ciepłych potraw - szczególnie kuchni
+                włoskiej, twarogu. Doskonały dodatek do zapiekanek, potraw
+                mięsnych i ryb. Działa przeciwdepresyjnie i dodaje sił. Wysiew
+                III-IV do pojemników. Wysadzać po 15 V na osłonięte,
+                nasłonecznione miejsce. Nadaje się do całorocznej uprawy w
+                doniczkach na parapecie okiennym. Zastosowanie: Świeże lub
+                suszone liście dodaje się do sałatek, sosów, twarogu,
+                zapiekanek, potraw mięsnych i ryb. Działa przeciwdepresyjnie i
+                dodaje sił. Bazylia jest rośliną przyprawową. Używamy jej liści
+                w postaci świeżej lub po wysuszeniu i zmieleniu. Świeże liście
+                dodajemy m.in. do: sałatek, sosów pomidorowych, do grzybów i dań
+                z makaronem. Suszona bazylia wykorzystywana jest m.in. do
+                pieczenia mięs, ryb, sosów kuchni włoskiej, zup, duszonych
+                warzyw i pizzy.
               </Desc>
               <Composition>
-                <strong>SKŁAD:</strong> Zboża, mięso i produkty odzwierzęce,
-                oleje i tłuszcze, produkty roślinne, substancje mineralne,
-                drożdze.
-              </Composition>
-              <Composition>
-                <strong>SKŁAD ANALITYCZNY:</strong> Białko surowe: 32%, Tłuszcz
-                surowy: 15%; Włókna: 3,5%; Popiół: 10%; Wilgotność: 10%.
-              </Composition>
-              <Composition>
-                <strong>DODATKI:</strong> Witaminy, prowitaminy lub związki
-                chemiczne o analogicznym działaniu. Wit. A: 19,600 UI; Wit. D3:
-                1680 UI; Wit. E (alfa-tokoferole): 84 UI; Wit. K: 0,32 mg; Wit.
-                B1: 1,23 mg; Wit. B2: 1,58 mg; Wit. B6 (chlorowodorek
-                piroksydyny): 1,47 mg, Wit. B12: 28 mcg; Niacynamid: 4,2 mg,
-                Kwas pantotenowy: 5,48 mg; Kwas foliowy: 0,44 mg; Biotyna: 70
-                mcg
+                <strong>Sprawdzone nasiona:</strong> oferowane nasiona są
+                testowane przez firmę TORAF w laboratorium pod względem
+                zdolności kiełkowania oraz ogólnej jakości nasion czystość
+                nasion oraz ich wilgotność procedury testów zgodne z ISTA
+                (Międzynarodowy Związek Oceny Nasion)
               </Composition>
             </ImageContainer>
           </Products>
 
           <Filter>
             <ProducerContainer>
-              <ProducerName>Dolina Noteci</ProducerName>
-              <ProducerLogo src="https://www.dolina-noteci.pl/data/include/cms/dn_filtr/logotypy/dn.png" />
+              <ProducerName>Toraf</ProducerName>
+              <ProducerLogo src="../img/products/logo.jpg" />
             </ProducerContainer>
             <Line />
             <PriceContainer>
               <PriceContainerTitle>
                 Divinus Performance DLA OWCZARKA 42% mięsa 20kg
               </PriceContainerTitle>
-              <Price>145,00 zł</Price>
-              <NetPrice>134,26 zł netto, 8% VAT</NetPrice>
+              <Price>2,19 zł</Price>
+              <NetPrice>1,92 zł netto, 8% VAT</NetPrice>
             </PriceContainer>
             <Line />
             <DeliveryContainer>
@@ -249,15 +250,15 @@ const SingleProduct = () => {
             </DeliveryContainer>
             <Line />
             <CompositionContainer>
-              <CompositionTitle>Skład karmy</CompositionTitle>
+              <CompositionTitle>Parametry</CompositionTitle>
               <CompositionList>
-                <CompositionListItem>Kalorie: 341 kcal</CompositionListItem>
-                <CompositionListItem>Białko: 28 %</CompositionListItem>
-                <CompositionListItem>Tłuszcz: 10 %</CompositionListItem>
-                <CompositionListItem>Popiół surowy: 10 %</CompositionListItem>
-                <CompositionListItem>Włókno surowe: 10 %</CompositionListItem>
                 <CompositionListItem>
-                  Wilgotność karmy: 9.5 %
+                  Odmiana: Bazylia Właściwa
+                </CompositionListItem>
+                <CompositionListItem>Waga: 1g</CompositionListItem>
+                <CompositionListItem>Wysiew: III-IV</CompositionListItem>
+                <CompositionListItem>
+                  Rodzaj uprawy: Uprawa domowa, Uprawa w ogrodzie
                 </CompositionListItem>
               </CompositionList>
             </CompositionContainer>
