@@ -11,6 +11,7 @@ import StepOne from "./pages/stepOne/StepOne";
 
 import SingleProduct from "./pages/singleProduct/SingleProduct";
 import HomeAdmin from "./pages/admin/home/HomeAdmin";
+import AdressAdmin from "./pages/admin/adress/AdressAdmin";
 function App() {
   return (
     <BrowserRouter>
@@ -24,12 +25,12 @@ function App() {
         <Route path="/krok-6" element={<StepFive />} />
         <Route path="/lista-produktow/:id" element={<SingleProduct />} />
         <Route path="/admin/dashboard" element={<HomeAdmin />} />
-        <Route path="/admin/adres-dostawy" element={<HomeAdmin />} />
+        <Route path="/admin/adres-dostawy" element={<AdressAdmin />} />
 
         {/* 
           
           -admin-
-            my account (kokpit )+
+            
             moje zamówienia
             Adress Delivery
           
