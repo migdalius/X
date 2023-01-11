@@ -1,8 +1,9 @@
 import styled, { keyframes } from "styled-components";
 import Footer from "../../../components/footer/Footer";
 import Navigation from "../../../components/nav/Navigation";
-import { Bag, Cart, DoorClosed, Truck } from "react-bootstrap-icons";
+
 import AdminSidebar from "../../../components/adminsidebar/AdminSidebar";
+import OrderProduct from "../../../components/orderproduct/OrderProduct";
 
 const BackgroundContainer = styled.div`
   width: 100vw;
@@ -29,7 +30,7 @@ const LeftContainer = styled.div`
 `;
 
 const CenterContainer = styled.div`
-  width: 40%;
+  width: 45%;
   height: 500px;
   background-color: #fff;
 `;
@@ -79,7 +80,15 @@ const Ring = styled.div`
   background-color: #fff;
   border-radius: 50%;
 `;
-const HomeAdmin = () => {
+
+const ProductContainer = styled.div`
+  display: flex;
+  margin: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+`;
+
+const OrderAdmin = () => {
   return (
     <div className="app">
       <BackgroundContainer>
@@ -91,40 +100,11 @@ const HomeAdmin = () => {
           <CenterContainer>
             <AdminCenterContainer>
               <AdminTextContainer>
-                <AdminTextTitle>Hej "NAME"!</AdminTextTitle>
-                <AdminTextDesc>
-                  W ustawieniach swojego konta możesz przejrzeć swoje zamówienia
-                  i zwroty, zarządzać adresami dostaw oraz sprawdzić instrukcje
-                  uprawy produktów które zamówiłeś. W tym miejscu możesz także
-                  zmienić hasło do konta i sprawdzić jego ustawienia.
-                </AdminTextDesc>
+                <AdminTextTitle>Moje Zakupy</AdminTextTitle>
               </AdminTextContainer>
-              <AdminCartContener>
-                <AdminCart>
-                  <Ring>
-                    <Bag color="#0d9488" size={35} />
-                  </Ring>
-                  <AdminCartTitle>Zamówienia</AdminCartTitle>
-                </AdminCart>
-                <AdminCart>
-                  <Ring>
-                    <Truck color="#0d9488" size={35} />
-                  </Ring>
-                  <AdminCartTitle>Adres dostawy</AdminCartTitle>
-                </AdminCart>
-                <AdminCart>
-                  <Ring>
-                    <Cart color="#0d9488" size={35} />
-                  </Ring>
-                  <AdminCartTitle>Koszyk Zakupów</AdminCartTitle>
-                </AdminCart>
-                <AdminCart>
-                  <Ring>
-                    <DoorClosed color="#0d9488" size={35} />
-                  </Ring>
-                  <AdminCartTitle>Wyloguj</AdminCartTitle>
-                </AdminCart>
-              </AdminCartContener>
+              <ProductContainer>
+                <OrderProduct />
+              </ProductContainer>
             </AdminCenterContainer>
           </CenterContainer>
         </MainContainer>
@@ -134,4 +114,4 @@ const HomeAdmin = () => {
   );
 };
 
-export default HomeAdmin;
+export default OrderAdmin;
