@@ -13,6 +13,7 @@ import SingleProduct from "./pages/singleProduct/SingleProduct";
 import HomeAdmin from "./pages/admin/home/HomeAdmin";
 import AdressAdmin from "./pages/admin/adress/AdressAdmin";
 import OrderAdmin from "./pages/admin/order/OrderAdmin";
+import Login from "./pages/auth/login/Login";
 function App() {
   return (
     <BrowserRouter>
@@ -29,7 +30,7 @@ function App() {
         <Route path="/admin/adres-dostawy" element={<AdressAdmin />} />
         <Route path="/admin/moje-zamowienia" element={<OrderAdmin />} />
 
-        <Route path="/auth/logowanie" element={<OrderAdmin />} />
+        <Route path="/auth/logowanie" element={<Login />} />
         <Route path="/auth/rejestracja" element={<OrderAdmin />} />
 
         {/* 
